@@ -1,0 +1,45 @@
+<div class="container">
+  <h1 class="my-5 text-center">Add New Post</h1>
+  <form class="row g-3 align-items-center" [formGroup]="postsService.postForm" (ngSubmit)="submit()">
+
+
+
+    <div class="d-flex justify-content-center">
+      <label for="username" class="col-form-label">User Name</label>
+    </div>
+    <div class="w-100">
+      <input type="text" id="username" class="form-control" formControlName="username">
+    </div>
+
+
+    <div class="d-flex justify-content-center">
+      <label for="userImage" class="col-form-label">User Image</label>
+    </div>
+    <div class="w-100">
+      <input type="text" id="userImage" class="form-control" formControlName="userImage">
+    </div>
+
+
+    <div class="d-flex justify-content-center">
+      <label for="description" class="col-form-label">Post Description</label>
+    </div>
+    <div class="w-100">
+      <input type="text" id="description" class="form-control" formControlName="description">
+    </div>
+
+
+    <div class="d-flex justify-content-center">
+      <label for="postImage" class="col-form-label">Post Image</label>
+    </div>
+    <div class="w-100">
+      <input type="text" id="postImage" class="form-control" formControlName="postImage">
+    </div>
+
+
+    <div class="w-100 text-center mt-3">
+      <button class="btn btn-success" (click)="submit()">Add New Post</button>
+    </div>
+
+  </form>
+  <hr>
+</div>

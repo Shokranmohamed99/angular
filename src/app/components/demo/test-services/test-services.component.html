@@ -1,0 +1,21 @@
+<div class="container">
+<form class="row g-3 align-items-center"  [formGroup]="addUserForm">
+    <div class="d-flex justify-content-center">
+        <label for="inputPassword6" class="col-form-label">Add User</label>
+    </div>
+    <div class="w-100">
+        <input type="text" class="form-control" formControlName="addUserForm" >
+    </div>
+<button class="btn btn-success" (click)="onAddNewUser()">Add New User</button>
+</form>
+<hr>
+<form class="row g-3 align-items-center" [formGroup]="deleteUserForm">
+    <div class="d-flex justify-content-center">
+        <label for="inputPassword6" class="col-form-label">Delete User</label>
+    </div>
+    <div class="w-100">
+        <input type="text" class="form-control" formControlName="addUserForm">
+    </div>
+<button class="btn btn-danger">Delete  User</button>
+</form>
+</div>

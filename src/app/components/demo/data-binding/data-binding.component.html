@@ -1,0 +1,11 @@
+<h2>{{ user.userName }}</h2>
+<!-- <p>Age: {{ user.userAge }}</p>
+<p>Address: {{ user.userAddress }}</p> -->
+<img [src]="user.userImage" width="100px" alt="User image">
+<div>
+<button class="btn btn-success w-100" (click)="sayHello
+($event)">Hello</button>
+</div>
+
+<h2 class="my-2"> Say any thing : {{message}}</h2>
+<input class="form-control" [ngModel]="message">

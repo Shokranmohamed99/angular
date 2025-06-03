@@ -1,0 +1,26 @@
+<h1 class="my-4 text-center">my form</h1>
+
+<form class="container">
+  <div class="w-75">
+    <div class="col-auto" [formGroup]="loginForm" aria-autocomplete="off">
+      <label for="email" class="col-form-label">Email</label>
+  </div>
+  <div class="col-auto">
+     <input type="text" id="email" class="form-control"  [ngClass]="{'border-danger' : isEmailValid ||isEmailMatches}" formControlName="email" >
+         <span *ngIf="isEmailRequird"> Email is Requird</span>
+         <span *ngIf="isEmailMatches"> Email is NOT Valid</span>
+    </div>
+ 
+</div>
+<div class="w-75">
+  <div class="col-auto">
+    <label for="Password" class="col-form-label">Password</label>
+  </div>
+  <div class="col-auto">
+     <input type="password" id="Password" class="form-control" formControlName="password">
+  </div>
+ 
+</div>
+    <button class="btn btn-primary mt-5 w-75" (click)="onSubmit()">submit</button>
+    <button class="btn btn-danger mt-5 w-75" (click)="onReset()">reset</button>
+</form>
