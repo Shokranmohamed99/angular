@@ -21,30 +21,23 @@ export class CardComponent {
     postDescription: '',
     postImage: '',
     isLiked: false,
-    likeCount: 0,
-
-
-
-  }
-
+    likeCount: 0
+  };
 
   postsService = inject(PostsService);
 
   comments: IComment[] = [];
   newComment: string = '';
 
+ 
   toggleLike(): void {
-    // this.post.isLiked = !this.post.isLiked;
-    console.log('aaaaaaaaaaaaaa');
-
-    // this.post.likeCount += this.post.isLiked ? 1 : -1;
     this.post.isLiked = !this.post.isLiked;
+    this.post.likeCount += this.post.isLiked ? 1 : -1;
+
+   
   }
-  
 
-
-
-
+ 
   addComment(): void {
     const trimmedComment = this.newComment.trim();
 
@@ -57,8 +50,8 @@ export class CardComponent {
 
       this.comments.push(comment);
       this.newComment = '';
+
+      
     }
   }
-
-  }
-
+}
