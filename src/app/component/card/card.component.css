@@ -65,4 +65,70 @@
 .bi-chat-left-text {
   font-size: 1.2rem;
 }
+.comment-button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.comment-button:hover {
+  background-color: #0056b3;
+}
+
+.comment-button svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+.comment-input-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 400px;
+  margin-top: 10px;
+}
+
+.comment-input {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.comment-input:focus {
+  border-color: #007bff;
+}
+input[type="text"] {
+  padding: 10px 14px;          /* مساحة داخلية مريحة */
+  border: 1.5px solid #ccc;    /* إطار رمادي فاتح */
+  border-radius: 6px;          /* حواف مدورة */
+  font-size: 16px;            
+  width: 450px;               
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #4a90e2;    
+  box-shadow: 0 0 6px rgba(74, 144, 226, 0.5); 
+  outline: none;              
+}
+
+input[type="text"]::placeholder {
+  color: #999;               
+  font-style: italic;        
+}
+
+
+
 

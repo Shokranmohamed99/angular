@@ -56,6 +56,11 @@ export class PostsService {
       likeCount: 0
     }
   ];
+   isPostFormShowen=false;
+
+   deletePost(id: number){
+    this._posts = this._posts.filter((posts)=> posts.id !==id);
+   }
 
 postForm = new FormGroup({
     userName: new FormControl('', Validators.required),
@@ -81,6 +86,7 @@ postForm = new FormGroup({
       };
       this._posts.push(newPost);
       this.postForm.reset();
+      this.isPostFormShowen=false;
     }
   }
 }

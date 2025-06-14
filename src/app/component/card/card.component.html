@@ -5,7 +5,7 @@
       <strong>{{ post.userName }}</strong>
     </div>
 
-    <button class="btn p-0 border-0 bg-transparent" title="Delete">
+    <button class="btn p-0 border-0 bg-transparent" title="Delete" (click)="postsService.deletePost(post.id)">
       <img src="assets/icons/delete.svg" width="25" alt="Delete icon" />
     </button>
   </div>
@@ -16,21 +16,31 @@
     <p class="card-text">{{ post.postDescription }}</p>
 
     <div class="d-flex justify-content-between align-items-center mb-2">
-      <button class="btn btn-outline-danger" (click)="toggleLike()" aria-label="Toggle like">
+      <button class="btn " [ngClass]="{ 'btn-dark':post.isLiked , 'btn-outline-danger': !post.isLiked }" (click)="toggleLike()" aria-label="Toggle like">
         <i class="bi" [ngClass]="post.isLiked ? 'bi-heart-fill text-danger' : 'bi-heart text-dark'"></i>
-        {{ post.isLiked ? 'Liked' : 'Like' }}
+        <!-- {{ post.isLiked ? 'Liked' : 'Like' }} -->
       </button>
+<!-- <button (click)="toggleLike()">Test Like</button> -->
 
       <span>{{ post.likeCount }} {{ post.likeCount === 1 ? 'like' : 'likes' }}</span>
     </div>
 
-    <div class="input-group mb-2">
-      <input type="text" [(ngModel)]="newComment" placeholder="Add a comment..." class="form-control" />
-      <button class="btn btn-outline-secondary" (click)="addComment()">Post</button>
+    <div class="comments">
+    <div *ngFor="let comment of comments" class="comment">
+      <strong>{{ comment.user }}</strong>: {{ comment.text }}<br>
+      <small>{{ comment.timestamp | date: 'short' }}</small>
     </div>
-
-    <ul class="list-group">
-      <li *ngFor="let comment of comments" class="list-group-item">{{ comment }}</li>
-    </ul>
   </div>
+
+ 
+ <div style="display: flex; align-items: center; gap: 8px;">
+  <input type="text" [(ngModel)]="newComment" placeholder="write comment.." />
+  <button class="comment-button" (click)="addComment()" title="addComment">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chat" viewBox="0 0 16 16">
+      <path d="M2 1a1 1 0 0 0-1 1v11.793l2.854-2.853A.5.5 0 0 1 4 11h9a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z"/>
+    </svg>
+  </button>
+</div>
+
+</div>
 </div>

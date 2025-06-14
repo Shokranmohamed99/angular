@@ -9,17 +9,18 @@ import { PostsService } from '../../services/posts.service';
   styleUrl: './post-form.component.css'
 })
 export class PostFormComponent {
-   postsService =inject(PostsService);
+  postsService = inject(PostsService);
   postAdded: any;
 
-   submit() {
-  if (this.postsService.postForm.valid) {
-    this.postsService.addNewPost();
-    this.postAdded.emit();
-  } else {
-    this.postsService.postForm.markAllAsTouched();
+
+  submit() {
+    if (this.postsService.postForm.valid) {
+      this.postsService.addNewPost();
+      this.postAdded.emit();
+    } else {
+      this.postsService.postForm.markAllAsTouched();
+    }
   }
-}
 
 }
 

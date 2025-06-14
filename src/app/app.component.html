@@ -1,3 +1,27 @@
+<!-- <app-header></app-header>
+
+<ng-container *ngIf="!isPostFormShowen">
+  <div class="container">
+    <div class="row justify-content-center g-5">
+      <app-card 
+        *ngFor="let post of posts" 
+        [post]="post" 
+        class="col-6">
+      </app-card>
+    </div>
+
+    <div class="add-post-button" (click)=" isPostFormShowen=true";>
+      +
+    </div>
+  </div>
+</ng-container>
+
+<app-post-form 
+  *ngIf="isPostFormShowen"
+  >
+</app-post-form>
+
+<app-footer></app-footer> -->
 <app-header></app-header>
 
 <ng-container *ngIf="!isPostFormShowen">
@@ -10,16 +34,18 @@
       </app-card>
     </div>
 
-    <div class="add-post-button" (click)="showPostForm()">
+    <button class="add-post-button" (click)="showPostForm()">
       +
-    </div>
+    </button>
   </div>
 </ng-container>
 
 <app-post-form 
   *ngIf="isPostFormShowen"
+  #postFormSection
   (postAdded)="onPostAdded()"
-  (cancel)="hidePostForm()">
+>
 </app-post-form>
 
 <app-footer></app-footer>
+
